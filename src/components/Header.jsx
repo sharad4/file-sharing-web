@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import shareFile from '../assets/shareFile.jpg';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +12,13 @@ const Header = () => {
   return (
     <header className='bg-gray-800 text-white p-4'>
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold"><Link to="/">FileShare</Link></h1>
+        <div className="flex items-center">
+          <img src={shareFile} alt="logo" className="w-12 h-12 mr-3 rounded" />
+          <h1 className="text-2xl font-bold">
+            <Link to="/">FileShare</Link>
+          </h1>
+        </div>
+        
         <nav>
           <button className='md:hidden' onClick={toggleMenu}>
             <svg
